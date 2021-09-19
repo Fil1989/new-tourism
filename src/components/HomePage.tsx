@@ -1,4 +1,7 @@
 import { createUseStyles } from "react-jss";
+import { Link } from "react-router-dom";
+import sendTourists from "../assets/sendTourists.png";
+import hostTourists from "../assets/hostTourists.png";
 
 const useStyles = createUseStyles({
   slogan: {
@@ -11,46 +14,9 @@ const useStyles = createUseStyles({
     alignItems: "center",
   },
 
-  send: {
-    backgroundColor: "blue",
-  },
-  host: {
-    backgroundColor: "yellow",
-  },
-  main_button: {
-    width: "90vw",
-    height: "200px",
-    border: "1px solid green",
-    borderRadius: "10px",
-    marginBottom: "20px",
-  },
-
   "@media screen and (min-width: 481px)": {
     container: {
       flexDirection: "row",
-      // padding: "0px 30px",
-    },
-    main_button: {
-      width: "40vw",
-      height: "35vw",
-      marginLeft: "15px",
-      marginRight: "15px",
-    },
-  },
-  "@media screen and (min-width: 768px)": {
-    container: {
-      // padding: "0px 60px",
-    },
-    main_button: {
-      height: "22vw",
-      position: "relative",
-      // marginLeft: "10px",
-      // marginRight: "10px",
-    },
-  },
-  "@media screen and (min-width: 1200px)": {
-    container: {
-      // padding: "0px 80px",
     },
   },
 });
@@ -64,12 +30,26 @@ function HomePage() {
         className={classes.container}
         aria-label="Sending or hosting tourists"
       >
-        <div area-labelledby="send_tourists" className={classes.main_button}>
-          <span id="send_tourists">If you send tourists, click here</span>
-        </div>
-        <div area-labelledby="host_tourists" className={classes.main_button}>
-          <span id="host_tourists">If you host tourists, click here</span>
-        </div>
+        <Link to="/send">
+          <button
+            type="button"
+            area-labelledby="send_tourists"
+            className="main_button send"
+          >
+            <span id="send_tourists">If you SEND tourists, click here</span>
+            <img src={sendTourists} alt="Send tourists" />
+          </button>
+        </Link>
+        <Link to="/host">
+          <button
+            type="button"
+            area-labelledby="host_tourists"
+            className="main_button host"
+          >
+            <span id="host_tourists">If you HOST tourists, click here</span>
+            <img src={hostTourists} alt="Send tourists" />
+          </button>
+        </Link>
       </div>
     </>
   );
