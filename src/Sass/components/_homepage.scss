@@ -2,12 +2,17 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
   width: 90vw;
   height: 200px;
   border-radius: 10px;
   margin-bottom: 20px;
   cursor: pointer;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover {
+    transform: scale(1.03);
+  }
 
   @media screen and (min-width: 481px) {
     width: 40vw;
@@ -16,11 +21,12 @@
     margin-right: 15px;
   }
   @media screen and (min-width: 768px) {
-    height: 22vw;
+    height: 28vw;
     position: relative;
   }
-  & img {
-    width: 250px;
+  @media screen and (min-width: 1200px) {
+    height: 22vw;
+    position: relative;
   }
 }
 .send {
@@ -34,4 +40,19 @@
   color: #ffffff;
   font-size: 18px;
   font-weight: bold;
+  margin-bottom: 5%;
+  margin-top: 3%;
+}
+.main_button_img {
+  width: 150px;
+  height: 87px;
+
+  @media screen and (min-width: 768px) {
+    width: 250px;
+    height: 145px;
+  }
+  @media screen and (min-width: 1200px) {
+    width: 300px;
+    height: 174px;
+  }
 }

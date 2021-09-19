@@ -17,6 +17,10 @@ const useStyles = createUseStyles({
   "@media screen and (min-width: 481px)": {
     container: {
       flexDirection: "row",
+
+      "& a:hover": {
+        textDecoration: "none",
+      },
     },
   },
 });
@@ -37,7 +41,11 @@ function HomePage() {
             className="main_button send"
           >
             <span id="send_tourists">If you SEND tourists, click here</span>
-            <img src={sendTourists} alt="Send tourists" />
+            <img
+              src={sendTourists}
+              alt="Send tourists"
+              className="main_button_img"
+            />
           </button>
         </Link>
         <Link to="/host">
@@ -47,7 +55,11 @@ function HomePage() {
             className="main_button host"
           >
             <span id="host_tourists">If you HOST tourists, click here</span>
-            <img src={hostTourists} alt="Send tourists" />
+            <img
+              src={hostTourists}
+              alt="Send tourists"
+              className="main_button_img"
+            />
           </button>
         </Link>
       </div>
