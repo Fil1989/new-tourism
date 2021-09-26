@@ -6,10 +6,10 @@
   border-radius: 10px;
   margin-bottom: 20px;
   cursor: pointer;
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   background-repeat: no-repeat;
   background-size: auto 120px;
   background-position: center top 80%;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   &:hover {
     transform: scale(1.03);
@@ -28,7 +28,8 @@
     background-size: auto 150px;
   }
   @media screen and (min-width: 1200px) {
-    background-size: auto 260px;
+    height: 22vw;
+    background-size: auto 190px;
   }
 }
 .send {
@@ -42,14 +43,6 @@
 .host {
   background-color: #939375;
   background-image: url(../../assets/hostTourists.png);
-
-  // @media screen and (min-width: 768px) {
-  //   background-position: center top 50%;
-  //   background-size: auto 160px;
-  // }
-  // @media screen and (min-width: 1200px) {
-  //   background-size: auto 274px;
-  // }
 }
 .host.host_animation {
   transform: translateX(40vw);
@@ -62,8 +55,9 @@
   font-size: 14px;
   font-weight: bold;
   margin-bottom: 5%;
-  margin-top: 5%;
+  margin-top: 15px;
   @media screen and (min-width: 768px) {
     font-size: 18px;
+    max-block-size: 18px;
   }
 }
