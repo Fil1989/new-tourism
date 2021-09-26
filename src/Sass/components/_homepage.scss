@@ -1,20 +1,21 @@
 .main_button {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  display: block;
+  text-align: center;
   width: 90vw;
   height: 200px;
   border-radius: 10px;
   margin-bottom: 20px;
   cursor: pointer;
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  background-repeat: no-repeat;
+  background-size: auto 120px;
+  background-position: center top 80%;
 
   &:hover {
     transform: scale(1.03);
   }
 
-  @media screen and (min-width: 481px) {
+  @media screen and (min-width: 480px) {
     width: 40vw;
     height: 35vw;
     margin-left: 15px;
@@ -23,36 +24,46 @@
   @media screen and (min-width: 768px) {
     height: 28vw;
     position: relative;
+    background-position: center top 60%;
+    background-size: auto 150px;
   }
   @media screen and (min-width: 1200px) {
-    height: 22vw;
-    position: relative;
+    background-size: auto 260px;
   }
 }
 .send {
   background-color: #c08369;
+  background-image: url(../../assets/sendTourists.png);
+}
+.send_animation {
+  transform: translateX(-40vw);
+  transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .host {
   background-color: #939375;
+  background-image: url(../../assets/hostTourists.png);
+
+  // @media screen and (min-width: 768px) {
+  //   background-position: center top 50%;
+  //   background-size: auto 160px;
+  // }
+  // @media screen and (min-width: 1200px) {
+  //   background-size: auto 274px;
+  // }
+}
+.host.host_animation {
+  transform: translateX(40vw);
+  transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 #send_tourists,
 #host_tourists {
+  display: inline-block;
   color: #ffffff;
-  font-size: 18px;
+  font-size: 14px;
   font-weight: bold;
   margin-bottom: 5%;
-  margin-top: 3%;
-}
-.main_button_img {
-  width: 150px;
-  height: 87px;
-
+  margin-top: 5%;
   @media screen and (min-width: 768px) {
-    width: 250px;
-    height: 145px;
-  }
-  @media screen and (min-width: 1200px) {
-    width: 300px;
-    height: 174px;
+    font-size: 18px;
   }
 }

@@ -1,7 +1,8 @@
 import { createUseStyles } from "react-jss";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import sendTourists from "../assets/sendTourists.png";
-import hostTourists from "../assets/hostTourists.png";
+// import sendTourists from "../assets/sendTourists.png";
+// import hostTourists from "../assets/hostTourists.png";
 
 const useStyles = createUseStyles({
   slogan: {
@@ -27,6 +28,10 @@ const useStyles = createUseStyles({
 
 function HomePage() {
   const classes = useStyles();
+  const [isLoading, setIsLoading] = useState(false);
+  useEffect(() => {
+    setIsLoading(true);
+  }, []);
   return (
     <>
       <h1 className={classes.slogan}>Travel in future</h1>
@@ -34,34 +39,40 @@ function HomePage() {
         className={classes.container}
         aria-label="Sending or hosting tourists"
       >
-        <Link to="/send">
-          <button
-            type="button"
+        {isLoading ? (
+          <Link
+            to="/send"
             area-labelledby="send_tourists"
             className="main_button send"
           >
             <span id="send_tourists">If you SEND tourists, click here</span>
-            <img
-              src={sendTourists}
-              alt="Send tourists"
-              className="main_button_img"
-            />
-          </button>
-        </Link>
-        <Link to="/host">
-          <button
-            type="button"
+          </Link>
+        ) : (
+          <Link
+            to="/send"
+            area-labelledby="send_tourists"
+            className="main_button send send_animation"
+          >
+            <span id="send_tourists">If you SEND tourists, click here</span>
+          </Link>
+        )}
+        {isLoading ? (
+          <Link
+            to="/host"
             area-labelledby="host_tourists"
             className="main_button host"
           >
             <span id="host_tourists">If you HOST tourists, click here</span>
-            <img
-              src={hostTourists}
-              alt="Send tourists"
-              className="main_button_img"
-            />
-          </button>
-        </Link>
+          </Link>
+        ) : (
+          <Link
+            to="/host"
+            area-labelledby="host_tourists"
+            className="main_button host host_animation"
+          >
+            <span id="host_tourists">If you HOST tourists, click here</span>
+          </Link>
+        )}
       </div>
     </>
   );

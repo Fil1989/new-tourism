@@ -43,6 +43,7 @@ const useStyles = createUseStyles({
   },
   logo: {
     width: "300px",
+    maxWidth: "100%",
   },
   auth: {
     margin: "0 10px",
